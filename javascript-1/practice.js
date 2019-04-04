@@ -78,21 +78,28 @@ colorCopy.push('yellow');
 // Create a new array called 'middleNums' from the numbers array that will capture only the middle numbers (2, 3, 4).
 const numbers = [1, 2, 3, 4, 5]
 
-const middleNames = numbers.slice(1, 4);
+const middleNums = numbers.slice(1, 4);
 //console.log(middleNames);
 
 //////////////////PROBLEM 11////////////////////
 
-// Create an object called 'me' that has these keys with the correct values: firstName, state, age, greeter. firstName will be your name as a string. state will be your current state or providence as a string. age will be your age as a number. greeter will be a method that returns the string 'Hello! My name is NAMEVALUE and I live in STATEVALUE' with the correct values
+// Create an object called 'me' that has these keys with the correct values: 
+//firstName, state, age, greeter. firstName will be your name as a string. 
+//state will be your current state or providence as a string. 
+//age will be your age as a number. 
+//greeter will be a method that returns the string 'Hello! My name is NAMEVALUE and I live in STATEVALUE' with the correct values
 
-//const me = {
-  //  firstName: 'Mandy',
-    //state: 'Utah',
-    //age: 31,
-    //greeter: 'Hello! My name is' + ' ' + firstName + ' ' + 'and I live in' + ' ' + state + '.'
-//};
-//console.log(me.greeter);
+const me = {
+    firstName: 'Mandy',
+    state: 'Utah',
+    age: 31,
+    greeter: function result(){
+        var greet = 'Hello! My name is' + ' ' + this.firstName + ' ' + 'and I live in' + ' ' + this.state + '.'
+        return greet;
+    }
+};
 
+ 
 //////////////////PROBLEM 12////////////////////
 
 // Create a function called 'bigOrSmall' that takes in one parameter, arr. Create a new array inside of bigOrSmall called 'answers'. Loop over the passed in arr param. 
@@ -101,11 +108,12 @@ const middleNames = numbers.slice(1, 4);
 //Return the answers array inside of the function
 
 const bigOrSmall = (arr) => {
+    arr = [20, 30, 400, 2, 101];
 	const answers = [];
 	for(i=0; i < arr.length; i++){
-		if(answers[i] > 100){
+		if(arr[i] >= 100){
 			answers.push('big');
-		} else if(answers[i] < 100) {
+		} else if(arr[i] < 100) {
 			answers.push('small')
 		}
 	}
@@ -120,13 +128,13 @@ const bigOrSmall = (arr) => {
 //Finally, return the new reversed array
 
 const arrayReverser = (arr) => {
-	const reversed = [];
-	for(i= arr.length - 1; 1>=0; i--){
-		reversed.push(arr[i]);
-	}
-	return reversed;
+    const reversed = [];
+    for(i = arr.length - 1; i >= 0; i--){
+        reversed.push(arr[i]);
+    }
+    return reversed;
 }
-console.log(reversed);
+
 //////////////////PROBLEM 14 - 18 Setup////////////////////
 
 // Below is an array, myNumbers. We will be using .map, .filter, .reduce and .forEach to manipulate the array in some form
@@ -135,15 +143,20 @@ const myNumbers = [3, 55, 788, 2, 1]
 
 //////////////////PROBLEM 14////////////////////
 
-// First, let's use .map to create a new array that doubles each number. Call the new array 'doubled'
+// First, let's use .map to create a new array that doubles each number. 
+//Call the new array 'doubled'
 
-// Code Here
+var doubled = myNumbers.map( function(n){return n*2;})
+
 
 //////////////////PROBLEM 15////////////////////
 
-// Now lets use .filter to only get the nubmer(s) greater than 100. Call the new array 'filtered'
+// Now lets use .filter to only get the nubmer(s) greater than 100. 
+//Call the new array 'filtered'
 
-// Code Here
+var filtered = myNumbers.filter( function(n){ return n >100});
+
+console.log(filtered)
 
 //////////////////PROBLEM 16////////////////////
 
