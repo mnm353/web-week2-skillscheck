@@ -156,19 +156,29 @@ var doubled = myNumbers.map( function(n){return n*2;})
 
 var filtered = myNumbers.filter( function(n){ return n >100});
 
-console.log(filtered)
+//console.log(filtered)
 
 //////////////////PROBLEM 16////////////////////
 
-// Next up, reduce to get the total of the array. call the new array 'total'
+// Next up, reduce to get the total of the array. 
+//call the new array 'total'
 
-// Code Here
+var total = myNumbers.reduce(function(a,b){
+    return a + b;}, 0);
+
 
 //////////////////PROBLEM 17////////////////////
 
-// Last, lets use .forEach to find the index of each item in the array. First, create an empty array called myNumbersIndex. Next, using forEach, push each items index from the myNumbers array to the myNumbersIndex array
+// Last, lets use .forEach to find the index of each item in the array. 
+//First, create an empty array called myNumbersIndex. 
+//Next, using forEach, push each items index from the 
+//myNumbers array to the myNumbersIndex array
 
-// Code Here
+var myNumbersIndex = [];
+myNumbers.forEach(function(element, index) {
+    myNumbersIndex.push(element.index)
+})
+
 
 //////////////////PROBLEM 18////////////////////
 
