@@ -175,21 +175,29 @@ var total = myNumbers.reduce(function(a,b){
 //myNumbers array to the myNumbersIndex array
 
 var myNumbersIndex = [];
-myNumbers.forEach(function(element, index) {
-    myNumbersIndex.push(element.index)
+myNumbers.forEach(function(arr, obj) {
+    for (var obj in arr) {
+        var i = Object.keys(arr).indexOf(obj);
+    }
+    return myNumbersIndex.push(myNumbers[i])
 })
 
 
 //////////////////PROBLEM 18////////////////////
 
-// Did you know that George Foreman has five sons named George? Let's go ahead and change everyone's name in the notGeorge array to George using .map. Call the new array 'forTheLoveOfGeorge'
+// Did you know that George Foreman has five sons named George? 
+//Let's go ahead and change everyone's name in the notGeorge array to George 
+//using .map. Call the new array 'forTheLoveOfGeorge'
 const notGeorge = ['Louis', 'Ted', 'Bill', 'Sharon', 'Mark', 'Angela']
 
-// Code Here
+var forTheLoveOfGeorge = notGeorge.map(function(val){
+    return notGeorge[val] = 'George';   
+})
 
 //////////////////PROBLEM 19////////////////////
 
-// Using the people array, let's filter out everyone that isn't our friend to a new array called 'enemies'. Use .filter()
+// Using the people array, let's filter out everyone that isn't our friend 
+//to a new array called 'enemies'. Use .filter()
 const people = [
 	{ name: 'Landy', friend: true, awesomeLevel: 10 },
 	{ name: 'Jeremy', friend: true, awesomeLevel: 10 },
@@ -199,10 +207,14 @@ const people = [
 	{ name: 'George', friend: true, awesomeLevel: 7 }
 ]
 
-// Code Here
+var enemies = people.filter(val => {
+    return val.friend === false;
+});
 
 //////////////////PROBLEM 20////////////////////
 
-// Using the people array above, let's get a total of the awesomeLevel from all the people. Call the new array 'totallyAwesome'. Use .reduce()
+// Using the people array above, 
+//let's get a total of the awesomeLevel from all the people. 
+//Call the new array 'totallyAwesome'. Use .reduce()
 
-// Code Here
+const totallyAwesome = [];
