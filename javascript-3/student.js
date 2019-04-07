@@ -61,14 +61,22 @@ function removeItem(index){
 //replacing the number of items
 
 function checkGroceryCount(){
-    for(i= 0; i > groceries.length; i++)
-    var number = console.log(groceries.length);
-   if(groceries.length - 1 >= 5) {
-       console.log('That looks like a big trip');
-     }  else if(groceries.length - 1 > 1 || groceries.length -1 < 5){
-        console.log(number + ' items')
-   } else if(groceries.length -1 === 1){
-       console.log('1 item.');
+    // list = ['bannanas', 'apples', 'hot dogs']
+    // number = list.length
+    // list[number-1]
+    // 
+
+    //for(i= 0; i > groceries.length; i++)
+    //var number = console.log(groceries.length);
+    var number = groceries.length;
+   if(number >= 5) {
+       return 'That looks like a big trip';
+     }  
+     if(number > 1 && number < 5){
+        return number + ' items'
+   }  
+   if(number === 1){
+       return '1 item';
    }
 }
 
