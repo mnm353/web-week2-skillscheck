@@ -5,7 +5,7 @@
 // Create a new array called 'faveColors' 
 //and set it your three favorite colors as strings.
 
-var faveColors = ['turquoise', 'pink', 'green'];
+var faveColors = ['blue', 'pink', 'green'];
 
 //////////////////Step 2////////////////////
 // Create an object called 'me' that has these keys: 
@@ -29,8 +29,10 @@ var me = {
     superHeroName: 'Brave Bootylicious Bandit',
     homeTown: 'Sandy, UT',
     superPowers: ['mind reading', 'flying', 'x-ray vision'],
-    superPowerXP: Math.floor(Math.random() * 100) + 1,
-    profileImage: document.createElement("https://randomuser.me/api/portraits/med/lego/${Math.floor(Math.random() * 10) + 1 }.jpg")
+    superPowerXP: function (){
+        return Math.floor(Math.random() * 100) + 1},
+    profileImage: function (){ 
+        return`https://randomuser.me/api/portraits/med/lego/${Math.floor(Math.random() * 10) + 1 }.jpg`}
 }
 //////////////////Step 3////////////////////
 // Create three variables to hold some data off your me object. 
@@ -64,7 +66,7 @@ function setColor (arr){
     if(faveColors[i] === 'blue'){
         return '#4D4DFF';
     }
-    function background(faveColors);
+    background(faveColors[0],faveColors[1],faveColors[2]);
 }
 
 //////////////////Step 5////////////////////
@@ -75,8 +77,8 @@ function setColor (arr){
 //It outside the scope of this project
 
 function setPowers(arr){
-    for(i=0; i > arr.length; i++)
-    return createLi(arr[i])
+    for(let i=0; i < arr.length; i++)
+    createLi(arr[i])
 }
 
 
@@ -91,6 +93,8 @@ function setPowers(arr){
 //will update the text on the screen.
 
 function redactInfo(obj){
-    
-
+    for(let x in obj){
+        obj[x] = 'redacted'
+    }
+    redacted()
 }
