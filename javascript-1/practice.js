@@ -175,20 +175,19 @@ var total = myNumbers.reduce(function(a,b){
 //myNumbers array to the myNumbersIndex array
 
 var myNumbersIndex = [];
-myNumbers.forEach(function(arr, obj) {
-    for (var obj in arr) {
-        var i = Object.keys(arr).indexOf(obj);
-    }
-    return myNumbersIndex.push(myNumbers[i])
-})
 
+myNumbers.forEach((number) => {
+    var index = myNumbers.indexOf(number)
+    myNumbersIndex.push(index)
+})
+console.log(myNumbersIndex)
 
 //////////////////PROBLEM 18////////////////////
 
 // Did you know that George Foreman has five sons named George? 
 //Let's go ahead and change everyone's name in the notGeorge array to George 
 //using .map. Call the new array 'forTheLoveOfGeorge'
-const notGeorge = ['Louis', 'Ted', 'Bill', 'Sharon', 'Mark', 'Angela']
+var notGeorge = ['Louis', 'Ted', 'Bill', 'Sharon', 'Mark', 'Angela']
 
 var forTheLoveOfGeorge = notGeorge.map(function(val){
     return notGeorge[val] = 'George';   
@@ -217,4 +216,10 @@ var enemies = people.filter(val => {
 //let's get a total of the awesomeLevel from all the people. 
 //Call the new array 'totallyAwesome'. Use .reduce()
 
-const totallyAwesome = [];
+
+var totallyAwesome = [];
+var reducer = (total, person) => total + person.awesomeLevel;
+
+totallyAwesome = people.reduce(reducer, 0)
+    
+//function(total, person) {total + person.awesomeLevel}, 0)
